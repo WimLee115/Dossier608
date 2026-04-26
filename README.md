@@ -31,4 +31,4 @@ Het bewijs waarvan deze site refereert is cryptografisch verankerd in de Bitcoin
 - **Feitelijk** — alleen verifieerbare data en cijfers
 - **Toegankelijk** — semantic HTML, prefers-reduced-motion, mobile-responsive
 
-— PrivacyVerzetNL & WimLee115
+— WimLee115
