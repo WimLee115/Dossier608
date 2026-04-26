@@ -1,0 +1,4 @@
+Contact: mailto:almass-only@protonmail.com
+Expires: 2027-04-26T00:00:00.000Z
+Preferred-Languages: nl, en
+Canonical: https://wimlee115.github.io/Dossier608/.well-known/security.txt
