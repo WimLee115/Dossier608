@@ -42,7 +42,7 @@
 <meta name="twitter:image" content="https://dossier608.nl/og-image.svg">
 
 <title>Dossier608 — aankondiging</title>
-<link rel="stylesheet" href="style.css" integrity="sha384-JRrtL+seCtY5cWjfVGZ8f4T4iJ2Bw9SnHkeULBTjWPiD6uyW3b6Rzt2IrhCMB2Or" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css" integrity="sha384-lcvK54QHajYzoSdvwjMQW7ShEVfIBtes2YB9QEnfDD7ZWFEiXVOZ0cGqvXNZgkSL" crossorigin="anonymous">
 <link rel="canonical" href="https://dossier608.nl/">
 <link rel="icon" href="data:,">
 </head>
@@ -60,10 +60,10 @@
   <div class="hash-frame" aria-label="cryptografische verankering">
     <p class="hash-label">SHA256 — D-Day-zittingsdossier 26 april 2026</p>
     <code class="hash" id="hash">00db050c8951a85f573ee2e93cb3c816033b6914276451ad1d97b9e6e2098578</code>
-    <p class="hash-note">Deze hash is op 26 april 2026 in de Bitcoin-blockchain verankerd via OpenTimestamps. Hij verwijst naar het zittingsdossier dat op 6 juni 2026 om 06:06 in zijn geheel publiek wordt gemaakt.</p>
+    <p class="hash-note">Deze hash is op 26 april 2026 verankerd in de Bitcoin-blockchain via vier OpenTimestamps-kalenderservers. Volledige cryptografische verificatie is mogelijk vanaf 6 juni 2026, wanneer naast het zittingsdossier ook de bijbehorende OpenTimestamps-receipt publiek wordt gemaakt. Vanaf dat moment kan iedere derde onafhankelijk vaststellen dat het dossier in deze vorm reeds op 26 april 2026 bestond — en dus niet achteraf is samengesteld of gewijzigd.</p>
     <div class="hash-actions">
       <button type="button" id="hash-copy" class="hash-action" data-label-default="Kopieer hash" data-label-done="Gekopieerd ✓" data-label-fail="Selecteer + kopieer">Kopieer hash</button>
-      <a href="https://opentimestamps.org/" target="_blank" rel="noopener noreferrer external" class="hash-action">Verifieer →</a>
+      <a href="https://opentimestamps.org/" target="_blank" rel="noopener noreferrer external" class="hash-action">Over OpenTimestamps →</a>
     </div>
   </div>
 
@@ -175,6 +175,18 @@
     <li>Vastgelegd met cryptografische tijdstempels op publieke OpenTimestamps-kalenderservers en verankerd in de Bitcoin-blockchain — niet vatbaar voor manipulatie achteraf, niet vatbaar voor "dat zei ik niet".</li>
     <li>Een aanleiding voor toezicht, journalistiek en wetgever om verder te kijken naar de gehele branche, niet enkel naar dit ene dossier.</li>
   </ul>
+</section>
+
+<section class="block verification">
+  <h2>Hoe verificatie werkt — vanaf 6 juni 2026</h2>
+  <p class="verification-intro">Vanaf de release zijn zowel het volledige zittingsdossier als de bijbehorende OpenTimestamps-receipt op deze pagina te downloaden. Iedere derde — pers, jurist, toezichthouder, technicus, geïnteresseerde leek — kan dan zelfstandig en zonder afhankelijkheid van verzoeker de echtheid en de datering van het dossier onafhankelijk vaststellen. De vier stappen:</p>
+  <ol class="verification-steps">
+    <li>Download het volledige zittingsdossier (in archiefvorm) en de OpenTimestamps-receipt (<code>.ots</code>) vanaf deze pagina.</li>
+    <li>Bereken de SHA256-vingerafdruk van het dossier-archief op uw eigen computer met de standaardtool <code>sha256sum</code> (Linux, macOS) respectievelijk <code>certutil -hashfile … SHA256</code> (Windows).</li>
+    <li>Controleer dat deze vingerafdruk exact overeenstemt met de hash zoals die op deze pagina is vermeld. Verschilt zelfs één teken, dan is het bestand niet identiek aan wat oorspronkelijk werd verankerd.</li>
+    <li>Verifieer de OpenTimestamps-receipt via de open-source tool <code>ots verify</code> of via een online verifier. Deze toont onomstotelijk in welke Bitcoin-block en op welk tijdstip de hash is opgenomen — en daarmee dat het dossier in deze exacte vorm uiterlijk op 26 april 2026 bestond.</li>
+  </ol>
+  <p class="verification-note">De gebruikte tools (<code>sha256sum</code>, <code>ots</code>) zijn open-source en publiek beschikbaar. De vier OpenTimestamps-kalenderservers (<code>alice</code>, <code>bob</code>, <code>finney</code>, <code>catallaxy</code>) staan onder beheer van onafhankelijke partijen — niet van verzoeker. De Bitcoin-blockchain wordt door geen enkele partij eenzijdig gewijzigd. De keten van bewijs ligt daarmee in haar geheel buiten de controle van verzoeker en buiten de controle van enige andere bij deze zaak betrokken partij.</p>
 </section>
 
 <section class="block contact">
