@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Dossier608 — release 6 juni 2026 06:06">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#1a1a22"/>
+      <stop offset="100%" stop-color="#0b0b0d"/>
+    </radialGradient>
+    <linearGradient id="line" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#d4a14a" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#d4a14a"/>
+      <stop offset="100%" stop-color="#d4a14a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <text x="600" y="190" text-anchor="middle" font-family="Georgia, 'Iowan Old Style', serif" font-size="36" fill="#aab1bb" letter-spacing="6" font-weight="400">DIT IS EEN AANKONDIGING</text>
+  <text x="600" y="320" text-anchor="middle" font-family="Georgia, 'Iowan Old Style', serif" font-size="148" fill="#eef0f3" font-weight="400" letter-spacing="-3">Dossier608</text>
+  <line x1="540" y1="350" x2="660" y2="350" stroke="url(#line)" stroke-width="2"/>
+  <text x="600" y="420" text-anchor="middle" font-family="ui-monospace, 'JetBrains Mono', 'Menlo', monospace" font-size="22" fill="#d4a14a" letter-spacing="3">SHA256 — D-Day-zittingsdossier</text>
+  <text x="600" y="460" text-anchor="middle" font-family="ui-monospace, 'JetBrains Mono', 'Menlo', monospace" font-size="14" fill="#6c7480" letter-spacing="1">00db050c8951a85f573ee2e93cb3c816033b6914276451ad1d97b9e6e2098578</text>
+  <text x="600" y="555" text-anchor="middle" font-family="ui-monospace, 'JetBrains Mono', 'Menlo', monospace" font-size="22" fill="#eef0f3" letter-spacing="2">RELEASE — 6 JUNI 2026, 06:06</text>
+  <text x="600" y="585" text-anchor="middle" font-family="ui-monospace, 'JetBrains Mono', 'Menlo', monospace" font-size="13" fill="#6c7480" letter-spacing="2">Europe/Amsterdam</text>
+</svg>

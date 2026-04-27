@@ -25,15 +25,24 @@
 <meta name="theme-color" content="#0b0b0d">
 <meta name="color-scheme" content="dark">
 
-<!-- ===== Open Graph (geen externe afbeeldingen — privacy) ===== -->
+<!-- ===== Open Graph + Twitter ===== -->
 <meta property="og:title" content="Dossier608 — aankondiging">
 <meta property="og:description" content="6 juni 2026, 06:06 — vier jaar dossier wordt publiek.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nl_NL">
 <meta property="og:url" content="https://dossier608.nl/">
+<meta property="og:image" content="https://dossier608.nl/og-image.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dossier608 — release 6 juni 2026 06:06, met SHA256-verankering">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dossier608 — aankondiging">
+<meta name="twitter:description" content="6 juni 2026, 06:06 — vier jaar dossier wordt publiek.">
+<meta name="twitter:image" content="https://dossier608.nl/og-image.svg">
 
 <title>Dossier608 — aankondiging</title>
-<link rel="stylesheet" href="style.css" integrity="sha384-Lz79LNdYUBobvYTCFkwMzQooQucJGM8uKtXiuz4+f9AmGj9znoz4JvJ+vo9o4Mlj" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css" integrity="sha384-seqvyi7SGObtfdg11b6XZxgHh8MohDJtRoLSZbLgYTFCRLvEAu+Q0dIIvNWKqJbd" crossorigin="anonymous">
 <link rel="canonical" href="https://dossier608.nl/">
 <link rel="icon" href="data:,">
 </head>
@@ -47,6 +56,10 @@
     <p class="hash-label">SHA256 — D-Day-zittingsdossier 26 april 2026</p>
     <code class="hash" id="hash">00db050c8951a85f573ee2e93cb3c816033b6914276451ad1d97b9e6e2098578</code>
     <p class="hash-note">Deze hash is op 26 april 2026 in de Bitcoin-blockchain verankerd via OpenTimestamps. Hij verwijst naar het zittingsdossier dat op 6 juni 2026 om 06:06 in zijn geheel publiek wordt gemaakt.</p>
+    <div class="hash-actions">
+      <button type="button" id="hash-copy" class="hash-action" data-label-default="Kopieer hash" data-label-done="Gekopieerd ✓" data-label-fail="Selecteer + kopieer">Kopieer hash</button>
+      <a href="https://opentimestamps.org/" target="_blank" rel="noopener noreferrer external" class="hash-action">Verifieer →</a>
+    </div>
   </div>
 
   <div class="countdown" id="countdown" aria-live="polite">
@@ -56,22 +69,38 @@
     <div class="cd-block"><span class="cd-num" id="cd-s">--</span><span class="cd-lbl">seconden</span></div>
   </div>
 
+  <div class="progress-wrap" aria-label="voortgang naar release">
+    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+    <div class="progress-meta">
+      <span>26 apr 2026</span>
+      <span id="progress-pct">--</span>
+      <span>6 jun 2026 06:06</span>
+    </div>
+  </div>
+
   <p class="release-line">Release — 6 juni 2026, 06:06 (Europe/Amsterdam)</p>
+
+  <a href="#main-stats" class="scroll-cue" aria-label="scroll naar inhoud">
+    <span class="scroll-cue-line"></span>
+    <span class="scroll-cue-label">scroll</span>
+  </a>
 </header>
 
-<main>
+<main id="main-stats">
 
 <section class="block stats">
   <h2>Wat openbaar wordt</h2>
   <div class="stats-grid">
-    <div class="stat"><span class="stat-num">13&nbsp;GB</span><span class="stat-lbl">dossier in totaal</span></div>
+    <div class="stat stat--primary"><span class="stat-num">13&nbsp;GB</span><span class="stat-lbl">dossier in totaal — bestanden, bewijsketens, transactiedata</span></div>
+    <div class="stat stat--primary"><span class="stat-num">4 jaar</span><span class="stat-lbl">geduld — 1 cliënt — € 70 leefgeld per week</span></div>
     <div class="stat"><span class="stat-num">2&nbsp;GB</span><span class="stat-lbl">monitoring-database (live)</span></div>
     <div class="stat"><span class="stat-num">100.000+</span><span class="stat-lbl">bestanden</span></div>
     <div class="stat"><span class="stat-num">671.000+</span><span class="stat-lbl">geverifieerde scans</span></div>
     <div class="stat"><span class="stat-num">14</span><span class="stat-lbl">bewindvoerderskantoren in beeld</span></div>
     <div class="stat"><span class="stat-num">38</span><span class="stat-lbl">domeinen 24/7 gemonitord</span></div>
     <div class="stat"><span class="stat-num">5.411+</span><span class="stat-lbl">OpenTimestamps&#8209;verankeringen</span></div>
-    <div class="stat"><span class="stat-num">4 jaar</span><span class="stat-lbl">geduld — 1 cliënt — € 70 leefgeld per week</span></div>
   </div>
 </section>
 
@@ -153,9 +182,10 @@
 
 <footer>
   <p>De cryptografische bewijsketen van het zittingsdossier is op vier publieke OpenTimestamps-kalenderservers verankerd in de Bitcoin-blockchain. Verificatie is door iedereen onafhankelijk uitvoerbaar.</p>
+  <span class="ots-badge">Verankerd in Bitcoin · 26 april 2026</span>
   <p class="meta">Aankondiging gepubliceerd 26 april 2026 — release 6 juni 2026 06:06.</p>
 </footer>
 
-<script src="countdown.js" integrity="sha384-PXXkd4PYiIQEK44feRXO5lIRoWOGo3NHDZRvpaiPnv2rW+xBLsps2mj7wgSXIfiq" crossorigin="anonymous" defer></script>
+<script src="countdown.js" integrity="sha384-FyxBCsrAd994YyG5G8DPeEQe9+ZRZ+jRnK6eimmAPC0URetnwpRQHTvoNc1+YnUy" crossorigin="anonymous" defer></script>
 </body>
 </html>

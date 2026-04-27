@@ -9,6 +9,8 @@
   --fg-soft: #aab1bb;
   --fg-mute: #6c7480;
   --accent: #d4a14a;        /* warm gold — sobriety + impact */
+  --accent-soft: rgba(212, 161, 74, 0.15);
+  --accent-glow: rgba(212, 161, 74, 0.35);
   --line: #22252b;
   --hash-bg: #07080a;
   --serif: ui-serif, Georgia, "Iowan Old Style", "Apple Garamond", "Palatino Linotype", serif;
@@ -51,7 +53,6 @@ time,
   -webkit-touch-callout: default;
 }
 
-/* Drag-saven van elementen blokkeren */
 img, svg, picture, video, audio {
   -webkit-user-drag: none;
   user-drag: none;
@@ -63,13 +64,25 @@ img, svg, picture, video, audio {
 /* ==== HERO ==== */
 .hero {
   min-height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 4rem 1.5rem;
-  border-bottom: 1px solid var(--line);
+  padding: 4rem 1.5rem 6rem;
+  overflow: hidden;
+}
+/* Soft fade naar zwart i.p.v. harde lijn — geeft diepte */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 220px;
+  background: radial-gradient(ellipse at center bottom, transparent 0%, var(--bg) 75%);
+  pointer-events: none;
 }
 .overline {
   font-size: 0.78rem;
@@ -86,6 +99,8 @@ img, svg, picture, video, audio {
   letter-spacing: -0.03em;
   margin: 0 0 2.5rem;
   line-height: 0.95;
+  position: relative;
+  z-index: 2;
 }
 .title::after {
   content: "";
@@ -105,7 +120,11 @@ img, svg, picture, video, audio {
   background: var(--hash-bg);
   border: 1px solid var(--line);
   border-radius: 4px;
+  position: relative;
+  z-index: 2;
+  transition: border-color 0.3s ease;
 }
+.hash-frame:hover { border-color: rgba(212, 161, 74, 0.4); }
 .hash-label {
   font-family: var(--mono);
   font-size: 0.7rem;
@@ -130,13 +149,51 @@ img, svg, picture, video, audio {
   line-height: 1.55;
 }
 
+/* Hash-actions: kopieer + verifieer */
+.hash-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--line);
+  flex-wrap: wrap;
+}
+.hash-action {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-soft);
+  background: transparent;
+  border: 1px solid var(--line);
+  padding: 0.55rem 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.hash-action:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.hash-action[data-state="copied"] {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
 /* ==== COUNTDOWN ==== */
 .countdown {
   display: flex;
   gap: 1.25rem;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 1rem 0 1.75rem;
+  margin: 1rem 0 1rem;
+  position: relative;
+  z-index: 2;
 }
 .cd-block {
   display: flex;
@@ -163,12 +220,79 @@ img, svg, picture, video, audio {
   color: var(--fg-mute);
   margin-top: 0.55rem;
 }
+
+/* Progress-bar onder countdown — toont voortgang van 26 apr → 6 jun */
+.progress-wrap {
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto 1.25rem;
+  padding: 0 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+.progress-bar {
+  height: 2px;
+  background: var(--line);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, transparent 0%, var(--accent) 80%, var(--fg) 100%);
+  transition: width 0.6s ease;
+}
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.6rem;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--fg-mute);
+}
+
 .release-line {
   font-family: var(--mono);
   font-size: 0.95rem;
   color: var(--fg-soft);
-  margin: 0;
+  margin: 1.25rem 0 0;
   letter-spacing: 0.02em;
+  position: relative;
+  z-index: 2;
+}
+
+/* Scroll-cue onderaan hero */
+.scroll-cue {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 3;
+  opacity: 0.5;
+  animation: scroll-cue-fade 2.4s ease-in-out infinite;
+}
+.scroll-cue-line {
+  width: 1px;
+  height: 38px;
+  background: linear-gradient(180deg, transparent 0%, var(--accent) 100%);
+}
+.scroll-cue-label {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.32em;
+  color: var(--fg-mute);
+  text-transform: uppercase;
+}
+@keyframes scroll-cue-fade {
+  0%, 100% { opacity: 0.35; transform: translateX(-50%) translateY(0); }
+  50%      { opacity: 0.7;  transform: translateX(-50%) translateY(4px); }
 }
 
 /* ==== BLOCKS ==== */
@@ -200,6 +324,11 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
   padding: 1.5rem 1.25rem;
   background: var(--bg-soft);
   border-left: 2px solid var(--accent);
+  transition: border-left-width 0.2s ease, padding-left 0.2s ease;
+}
+.stat:hover {
+  border-left-width: 4px;
+  padding-left: calc(1.25rem - 2px);
 }
 .stat-num {
   font-family: var(--mono);
@@ -213,6 +342,27 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
   font-size: 0.86rem;
   color: var(--fg-soft);
   line-height: 1.45;
+}
+/* Hoofdcijfers — typografisch zwaarder */
+.stat--primary {
+  grid-column: span 2;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(135deg, var(--bg-soft) 0%, rgba(212, 161, 74, 0.06) 100%);
+}
+.stat--primary .stat-num {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 5.5vw, 4rem);
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.stat--primary .stat-lbl {
+  font-size: 0.92rem;
+  margin-top: 0.4rem;
+}
+@media (max-width: 640px) {
+  .stat--primary { grid-column: span 1; }
 }
 
 /* ==== TIMELINE ==== */
@@ -228,6 +378,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 .tl li {
   position: relative;
   padding-bottom: 2.5rem;
+  transition: padding-left 0.2s ease;
 }
 .tl li::before {
   content: "";
@@ -239,6 +390,12 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
   background: var(--bg);
   border: 2px solid var(--accent);
   border-radius: 50%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.tl li:hover::before {
+  transform: scale(1.25);
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
 }
 .tl time {
   display: block;
@@ -262,6 +419,12 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
   left: -3.1rem;
   top: 0.18rem;
   background: var(--accent);
+  box-shadow: 0 0 0 6px var(--accent-soft), 0 0 24px var(--accent-glow);
+  animation: pulse-final 3s ease-in-out infinite;
+}
+@keyframes pulse-final {
+  0%, 100% { box-shadow: 0 0 0 6px var(--accent-soft), 0 0 24px var(--accent-glow); }
+  50%      { box-shadow: 0 0 0 10px var(--accent-soft), 0 0 36px var(--accent-glow); }
 }
 .tl li.tl-final time {
   font-size: 0.95rem;
@@ -355,9 +518,35 @@ footer .meta {
   margin-top: 1.5rem;
 }
 
+/* OpenTimestamps badge */
+.ots-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--fg-soft);
+  text-transform: uppercase;
+  background: var(--bg-soft);
+}
+.ots-badge::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
 /* ==== MOBILE ==== */
 @media (max-width: 640px) {
-  .hero { padding: 3rem 1.25rem; }
+  .hero { padding: 3rem 1.25rem 5rem; }
   .hash-frame { padding: 1.1rem 1.1rem; }
   .countdown { gap: 0.6rem; }
   .cd-block { min-width: 70px; padding: 0.85rem 0.5rem; }
@@ -365,9 +554,15 @@ footer .meta {
   .tl { padding-left: 1.8rem; }
   .tl li::before { left: -2.25rem; }
   .tl li.tl-final::before { left: -2.4rem; }
+  .scroll-cue { bottom: 1rem; }
 }
 
 /* ==== REDUCED MOTION ==== */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .scroll-cue,
+  .tl li.tl-final::before {
+    animation: none !important;
+  }
+  .progress-fill { transition: none; }
 }
