@@ -69,7 +69,7 @@
       el.textContent = '';
       el.appendChild(a);
     } catch (e) {
-      el.textContent = 'almass-only [at] protonmail [punt] com';
+      el.textContent = '[contact niet beschikbaar — vernieuw de pagina]';
     }
   }
   showEmail();
@@ -178,15 +178,13 @@
     return true;
   }, { capture: true });
 
-  // 5) Optioneel: console-banner als afschrikwekkend bericht in dev tools
-  //    Doet niets technisch maar maakt gebruikersbedoelingen expliciet.
+  // 5) Optioneel: console-banner. Geen contactadres in de banner — dat staat
+  //    op de pagina zelf en is niet bedoeld voor logging in browser-consoles.
   try {
     if (typeof console !== 'undefined' && console.log) {
       var banner =
         '%cDossier608\n' +
-        '%cDeze pagina is een aankondiging. ' +
-        'Voor verzoeken om vroege toegang: zie het mailadres op de pagina. ' +
-        'Voor onderzoek-/aansprakelijkheidsvragen: contact via almass-only@protonmail.com.';
+        '%cDeze pagina is een aankondiging. Contact via het adres op de pagina.';
       console.log(banner, 'color:#d4a14a;font-size:18px;font-weight:600',
         'color:#aab1bb;font-size:13px;line-height:1.5');
     }
