@@ -287,6 +287,18 @@ img, svg, picture, video, audio {
   position: relative;
   z-index: 2;
 }
+.release-condition {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--fg-mute);
+  max-width: 640px;
+  margin: 0.7rem auto 0;
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+  position: relative;
+  z-index: 2;
+  padding: 0 1rem;
+}
 
 /* Scroll-cue onderaan hero */
 .scroll-cue {
