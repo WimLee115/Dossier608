@@ -111,6 +111,30 @@ img, svg, picture, video, audio {
   margin: 1.5rem auto 0;
 }
 
+/* Lead — sober inleidende paragrafen onder de titel */
+.lead {
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto 2.75rem;
+  position: relative;
+  z-index: 2;
+  text-align: left;
+}
+.lead p {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 1.85vw, 1.18rem);
+  line-height: 1.7;
+  color: var(--fg-soft);
+  margin: 0 0 1.1rem;
+}
+.lead p:last-child {
+  margin-bottom: 0;
+  color: var(--fg);
+}
+@media (max-width: 640px) {
+  .lead p { font-size: 0.98rem; line-height: 1.65; }
+}
+
 /* ==== HASH ==== */
 .hash-frame {
   max-width: 760px;
