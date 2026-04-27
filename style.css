@@ -26,7 +26,38 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  /* ==== HARDENING: blokkeer tekst-selectie standaard ==== */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none; /* iOS context-menu op long-press uit */
 }
+
+/* Sta selectie expliciet toe op elementen waar pers/onderzoekers
+   inhoud moeten kunnen kopiëren (hash, mailadres, datums, code). */
+.hash,
+.email,
+.email a,
+code,
+pre,
+time,
+.selectable {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
+}
+
+/* Drag-saven van elementen blokkeren */
+img, svg, picture, video, audio {
+  -webkit-user-drag: none;
+  user-drag: none;
+  pointer-events: auto;
+}
+
 ::selection { background: var(--accent); color: #1a140a; }
 
 /* ==== HERO ==== */

@@ -1,31 +1,41 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" dir="ltr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
 <!-- ===== Security headers (via meta — GitHub Pages serveert geen custom headers) ===== -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; frame-ancestors 'none'; base-uri 'none'; object-src 'none'; manifest-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; frame-ancestors 'none'; frame-src 'none'; child-src 'none'; worker-src 'none'; media-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests; block-all-mixed-content">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="X-DNS-Prefetch-Control" content="off">
+<meta http-equiv="X-Permitted-Cross-Domain-Policies" content="none">
+<meta http-equiv="X-XSS-Protection" content="0">
 <meta http-equiv="Referrer-Policy" content="no-referrer">
-<meta http-equiv="Permissions-Policy" content="interest-cohort=(), camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=()">
+<meta http-equiv="Permissions-Policy" content="interest-cohort=(), camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=(), bluetooth=(), midi=(), serial=(), hid=(), display-capture=(), idle-detection=(), sync-xhr=(), screen-wake-lock=(), web-share=(), xr-spatial-tracking=()">
 <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
 <meta http-equiv="Cross-Origin-Resource-Policy" content="same-origin">
 
 <!-- ===== Indexering ===== -->
-<meta name="robots" content="index,follow,max-image-preview:none,max-snippet:120">
+<meta name="robots" content="index,follow,noarchive,nosnippet,noimageindex,max-image-preview:none,max-snippet:120">
+<meta name="googlebot" content="index,follow,noarchive,nosnippet,noimageindex">
+<meta name="bingbot" content="index,follow,noarchive,nosnippet,noimageindex">
+<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
 <meta name="description" content="Dossier608 — aankondiging van publicatie op 6 juni 2026 om 06:06. Vier jaar onderzoek naar de Nederlandse bewindvoeringssector vanuit één cliëntdossier.">
 <meta name="theme-color" content="#0b0b0d">
+<meta name="color-scheme" content="dark">
 
 <!-- ===== Open Graph (geen externe afbeeldingen — privacy) ===== -->
 <meta property="og:title" content="Dossier608 — aankondiging">
 <meta property="og:description" content="6 juni 2026, 06:06 — vier jaar dossier wordt publiek.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nl_NL">
+<meta property="og:url" content="https://dossier608.nl/">
 
 <title>Dossier608 — aankondiging</title>
-<link rel="stylesheet" href="style.css" integrity="sha384-CmRJPteRXjmKWLvw5vJa9hvZGk62N/LSAD/mi+SvYXZN6e961ySj1goPiStquIo7" crossorigin="anonymous">
-<link rel="canonical" href="/">
+<link rel="stylesheet" href="style.css" integrity="sha384-Lz79LNdYUBobvYTCFkwMzQooQucJGM8uKtXiuz4+f9AmGj9znoz4JvJ+vo9o4Mlj" crossorigin="anonymous">
+<link rel="canonical" href="https://dossier608.nl/">
+<link rel="icon" href="data:,">
 </head>
 <body>
 
@@ -146,6 +156,6 @@
   <p class="meta">Aankondiging gepubliceerd 26 april 2026 — release 6 juni 2026 06:06.</p>
 </footer>
 
-<script src="countdown.js" integrity="sha384-T7rVg2OjjBEzpTQTmIIxgdnOAdLldlzj+kScmOk8d/1h0lnNLEpZxv+V1hOxuJNa" crossorigin="anonymous" defer></script>
+<script src="countdown.js" integrity="sha384-jAAYstUmKXyhd6xSD1Od6cz3JQm/bqBciBokcEZQEhclfS9HIQVdFgN1Waflu6fK" crossorigin="anonymous" defer></script>
 </body>
 </html>
