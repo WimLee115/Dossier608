@@ -4,232 +4,57 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-<!-- ===== Security headers (via meta — GitHub Pages serveert geen custom headers) ===== -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; frame-ancestors 'none'; frame-src 'none'; child-src 'none'; worker-src 'none'; media-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests; block-all-mixed-content">
+<!-- Security headers (via meta — GitHub Pages serveert geen custom headers) -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'none'; font-src 'none'; connect-src 'none'; form-action 'none'; frame-ancestors 'none'; frame-src 'none'; child-src 'none'; worker-src 'none'; media-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; upgrade-insecure-requests; block-all-mixed-content">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="X-Frame-Options" content="DENY">
-<meta http-equiv="X-DNS-Prefetch-Control" content="off">
-<meta http-equiv="X-Permitted-Cross-Domain-Policies" content="none">
-<meta http-equiv="X-XSS-Protection" content="0">
 <meta http-equiv="Referrer-Policy" content="no-referrer">
-<meta http-equiv="Permissions-Policy" content="interest-cohort=(), camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=(), bluetooth=(), midi=(), serial=(), hid=(), display-capture=(), idle-detection=(), sync-xhr=(), screen-wake-lock=(), web-share=(), xr-spatial-tracking=()">
-<meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
-<meta http-equiv="Cross-Origin-Resource-Policy" content="same-origin">
+<meta http-equiv="Permissions-Policy" content="interest-cohort=(), camera=(), microphone=(), geolocation=()">
 
-<!-- ===== Indexering ===== -->
-<meta name="robots" content="index,follow,noarchive,nosnippet,noimageindex,max-image-preview:none,max-snippet:120">
-<meta name="googlebot" content="index,follow,noarchive,nosnippet,noimageindex">
-<meta name="bingbot" content="index,follow,noarchive,nosnippet,noimageindex">
-<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
-<meta name="description" content="Dossier608 — aankondiging van publicatie op 6 juni 2026 om 06:06. Reconstructie van het beschermingsbewind in Nederland vanuit één cliëntdossier dat een netwerk van veertien kantoren in beeld bracht.">
-<meta name="theme-color" content="#0b0b0d">
-<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+<title>dossier608.nl</title>
 
-<!-- ===== Open Graph + Twitter ===== -->
-<meta property="og:title" content="Dossier608 — aankondiging">
-<meta property="og:description" content="6 juni 2026, 06:06 — reconstructie van het Nederlandse beschermingsbewind, vertrekkend vanuit één cliëntdossier.">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="nl_NL">
-<meta property="og:url" content="https://dossier608.nl/">
-<meta property="og:image" content="https://dossier608.nl/og-image.svg">
-<meta property="og:image:type" content="image/svg+xml">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Dossier608 — release 6 juni 2026 06:06, met SHA256-verankering">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Dossier608 — aankondiging">
-<meta name="twitter:description" content="6 juni 2026, 06:06 — reconstructie van het Nederlandse beschermingsbewind, vertrekkend vanuit één cliëntdossier.">
-<meta name="twitter:image" content="https://dossier608.nl/og-image.svg">
-
-<title>Dossier608 — aankondiging</title>
-<link rel="stylesheet" href="style.css" integrity="sha384-Obx6TC9BWl22FrxpY8Ts9qvHFxPNEZ9cBRaSCkgDQfVu99UWNUpdicX432xWxtYN" crossorigin="anonymous">
-<link rel="canonical" href="https://dossier608.nl/">
-<link rel="icon" href="data:,">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #000;
+    color: #ddd;
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+  main {
+    max-width: 36rem;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    text-align: left;
+  }
+  main p {
+    margin: 0 0 1rem 0;
+  }
+  main p:last-child {
+    margin-bottom: 0;
+  }
+  .meta {
+    color: #777;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+  }
+</style>
 </head>
 <body>
-
-<header class="hero">
-  <p class="overline">Dit is een aankondiging.</p>
-  <h1 class="title">Dossier608</h1>
-
-  <div class="lead">
-    <p>Het beschermingsbewind in Nederland wordt grotendeels uitgevoerd door private kantoren. Artikel 1:445 BW verplicht de bewindvoerder tot een jaarlijkse rekening en verantwoording bij de kantonrechter. Op die rapportage steunt het reguliere toezicht.</p>
-    <p>Dit dossier reconstrueert hoe dat in werkelijkheid functioneert: één cliëntdossier waarin veertien bewindvoerderskantoren binnen tweeënzeventig uur vergelijkbare wettelijke pagina's van hun website verwijderen. De sommatie die de aanleiding vormde was uitsluitend gericht aan één van deze kantoren. Of er bij de overige dertien een gemeenschappelijke aanleiding bestond voor de gelijktijdige aanpassingen, is onderwerp van het verdere onderzoek.</p>
-  </div>
-
-  <div class="hash-frame" aria-label="cryptografische verankering">
-    <p class="hash-label">SHA256 — D-Day-zittingsdossier 26 april 2026</p>
-    <code class="hash" id="hash">00db050c8951a85f573ee2e93cb3c816033b6914276451ad1d97b9e6e2098578</code>
-    <p class="hash-note">Deze hash is op 26 april 2026 verankerd in de Bitcoin-blockchain via vier OpenTimestamps-kalenderservers. Volledige cryptografische verificatie is mogelijk vanaf 6 juni 2026, wanneer naast het zittingsdossier ook de bijbehorende OpenTimestamps-receipt publiek wordt gemaakt. Vanaf dat moment kan iedere derde onafhankelijk vaststellen dat het dossier in deze vorm reeds op 26 april 2026 bestond — en dus niet achteraf is samengesteld of gewijzigd.</p>
-    <div class="hash-actions">
-      <button type="button" id="hash-copy" class="hash-action" data-label-default="Kopieer hash" data-label-done="Gekopieerd ✓" data-label-fail="Selecteer + kopieer">Kopieer hash</button>
-      <a href="https://opentimestamps.org/" target="_blank" rel="noopener noreferrer external" class="hash-action">Over OpenTimestamps →</a>
-    </div>
-  </div>
-
-  <div class="countdown" id="countdown" aria-live="polite">
-    <div class="cd-block"><span class="cd-num" id="cd-d">--</span><span class="cd-lbl">dagen</span></div>
-    <div class="cd-block"><span class="cd-num" id="cd-h">--</span><span class="cd-lbl">uren</span></div>
-    <div class="cd-block"><span class="cd-num" id="cd-m">--</span><span class="cd-lbl">minuten</span></div>
-    <div class="cd-block"><span class="cd-num" id="cd-s">--</span><span class="cd-lbl">seconden</span></div>
-  </div>
-
-  <div class="progress-wrap" aria-label="voortgang naar release">
-    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-      <div class="progress-fill" id="progress-fill"></div>
-    </div>
-    <div class="progress-meta">
-      <span>26 apr 2026</span>
-      <span id="progress-pct">--</span>
-      <span>6 jun 2026 06:06</span>
-    </div>
-  </div>
-
-  <p class="release-line">Release — 6 juni 2026, 06:06 (Europe/Amsterdam)</p>
-  <p class="release-condition">Indien een lopende rechterlijke procedure op die datum nog niet is afgerond, wordt de release opgeschort tot na de gerechtelijke afronding.</p>
-
-  <a href="#main-stats" class="scroll-cue" aria-label="scroll naar inhoud">
-    <span class="scroll-cue-line"></span>
-    <span class="scroll-cue-label">scroll</span>
-  </a>
-</header>
-
-<main id="main-stats">
-
-<section class="block stats">
-  <h2>Wat in beeld is gebracht</h2>
-  <div class="stats-grid">
-    <div class="stat stat--primary"><span class="stat-num">13&nbsp;GB</span><span class="stat-lbl">dossier — bestanden, bewijsketens, transactiedata, geldstromen</span></div>
-    <div class="stat stat--primary"><span class="stat-num">14</span><span class="stat-lbl">bewindvoerderskantoren — waartussen verbanden zichtbaar werden via bestuurders, hosting, software, jaarrekening-data</span></div>
-    <div class="stat"><span class="stat-num">4 jaar</span><span class="stat-lbl">vastlegging — één cliëntdossier als ingang</span></div>
-    <div class="stat"><span class="stat-num">38</span><span class="stat-lbl">domeinen 24/7 gemonitord</span></div>
-    <div class="stat"><span class="stat-num">671.000+</span><span class="stat-lbl">geverifieerde scans sinds maart 2026</span></div>
-    <div class="stat"><span class="stat-num">100.000+</span><span class="stat-lbl">bestanden</span></div>
-    <div class="stat"><span class="stat-num">5.411+</span><span class="stat-lbl">OpenTimestamps&#8209;verankeringen — elk bewijsstuk afzonderlijk vastgelegd op het moment van waarneming, niet retroactief</span></div>
-    <div class="stat"><span class="stat-num">2&nbsp;GB</span><span class="stat-lbl">monitoring-database (live)</span></div>
-  </div>
-</section>
-
-<section class="block timeline">
-  <h2>Tijdlijn</h2>
-  <ol class="tl">
-    <li>
-      <time>12 januari 2022</time>
-      <p>Begin van de bewindperiode die in dit dossier wordt gereconstrueerd. Vrijwillig, op eigen verzoek bij de kantonrechter.</p>
-    </li>
-    <li>
-      <time>verslagjaar 2022</time>
-      <p>Geen rekening en verantwoording door de bewindvoerder ingediend, terwijl artikel 1:445 BW dat voorschrijft. Eerste signaal van een patroon dat in latere jaren herhaling kreeg.</p>
-    </li>
-    <li>
-      <time>4 maart 2026</time>
-      <p>Sommatie aan het bewindvoerderskantoor met vijftien geconstateerde tekortkomingen. Ontvangst diezelfde avond bevestigd. Geen inhoudelijke reactie volgt.</p>
-    </li>
-    <li>
-      <time>5 maart 2026</time>
-      <p>Binnen vierentwintig uur na de sommatie worden elf pagina's op de website van het kantoor herschreven of verwijderd: medewerkers, AVG-beleid, klachtenreglement, privacyverklaring.</p>
-    </li>
-    <li>
-      <time>5 t/m 7 maart 2026</time>
-      <p>Veertien bewindvoerderskantoren — waartussen verbanden zichtbaar werden via gedeelde bestuurders, IP-adressen, software-leveranciers en jaarrekening-data — verwijderen binnen tweeënzeventig uur vergelijkbare wettelijke pagina's. De sommatie was uitsluitend gericht aan één van deze kantoren.</p>
-    </li>
-    <li>
-      <time>7 maart 2026</time>
-      <p>Eigen monitoring-systeem online. Vanaf dat moment wordt de inhoud van achtendertig domeinen vastgelegd met SHA256-hashes en blockchain-verankering. Onafgebroken sindsdien.</p>
-    </li>
-    <li>
-      <time>maart — april 2026</time>
-      <p>Acht bewijsvernietigingsgolven gedocumenteerd. Bestanden, medewerkers, klachtreglementen en jaarverslagen verdwijnen op gecoördineerde momenten van meerdere kantoren tegelijk.</p>
-    </li>
-    <li>
-      <time>17 maart — 14 april 2026</time>
-      <p>Vastgelegd hoe een rekening op het cliëntportaal van het bewindvoerderskantoor aan het zicht van de cliënt is onttrokken.</p>
-    </li>
-    <li>
-      <time>20 april 2026</time>
-      <p>De bank levert — onder AVG-verzoek en binnen de wettelijke termijn — de complete transactiehistorie van de bewindperiode. Totalen sluiten tot op de cent met de officiële Rabobank-headertotalen.</p>
-    </li>
-    <li>
-      <time>26 april 2026</time>
-      <p>Drie feitelijke onjuistheden in officiële rechterlijke stukken bevestigd via Mijn CBM, het portaal van de Rechtspraak voor cliënten onder Curatele, Bewind of Mentorschap. Het zittingsdossier wordt diezelfde dag in zijn geheel met cryptografische hashes verankerd.</p>
-    </li>
-    <li>
-      <time>19 mei 2026</time>
-      <p>Griffierbrief van Rechtbank Oost-Brabant ontvangen: het bewindvoerderskantoor heeft op 31 maart 2026 een eigen reactie aan de rechtbank gestuurd waarin het kantoor zich verzet tegen opheffing van het bewind en, subsidiair, zelf om ontslag verzoekt onder gelijktijdige benoeming van een opvolgend bewindvoerder. Een mondelinge behandeling is daarop ingepland.</p>
-    </li>
-    <li>
-      <time>22 mei 2026</time>
-      <p>Verweerschrift op de reactie van het bewindvoerderskantoor bij de griffie van Rechtbank Oost-Brabant ingediend. Verzonden uitsluitend aan de rechtbank, niet rechtstreeks aan de wederpartij — overeenkomstig de wijze waarop de reactie van het kantoor de cliënt heeft bereikt. Gelijktijdig is bij de rechtbank een aanvullend verzoek ingediend tot openbare behandeling, subsidiair tot aanhouding van een maand, en tot opschorting van de bewindvoerderskosten-incasso tot aan de eindbeschikking.</p>
-    </li>
-    <li class="tl-final">
-      <time>6 juni 2026 — 06:06</time>
-      <p>Release. Dossier en database in zijn geheel publiek toegankelijk.</p>
-    </li>
-  </ol>
-</section>
-
-<section class="block update">
-  <h2>Procedurele actualisatie — 22 mei 2026</h2>
-  <p>Tussen de aankondiging van deze website (26 april 2026) en de geplande release op 6 juni 2026 heeft zich op procedureel vlak een ontwikkeling voorgedaan die het vermelden waard is.</p>
-  <p>Het bewindvoerderskantoor heeft op 31 maart 2026 een eigen schriftelijke reactie aan Rechtbank Oost-Brabant gestuurd. Die reactie laat zich op vier punten samenvatten:</p>
-  <ol class="update-list">
-    <li><strong>Grondslag-claim.</strong> Het kantoor herhaalt dat de bewindstelling rust op de grondslag <em>lichamelijke en/of geestelijke stoornis</em>, en verwijst daarbij niet naar een specifiek medisch document of psychiatrisch onderzoek in het dossier.</li>
-    <li><strong>"Onbereikbaarheid"-claim.</strong> Het kantoor stelt dat de cliënt zich telefonisch niet bereikbaar heeft getoond en niet op mail reageerde, zonder concrete uitingen of verzendlogs aan te wijzen.</li>
-    <li><strong>"Verwijtbaar ontslag"-claim.</strong> Het kantoor herhaalt jegens de rechtbank dat een eerdere WW-aanvraag door UWV zou zijn afgewezen wegens verwijtbaar ontslag; een UWV-besluit waarin die kwalificatie afzonderlijk is vastgesteld is niet aan de cliënt getoond.</li>
-    <li><strong>Eigen ontslagverzoek.</strong> Het kantoor biedt aan om zelf te worden ontslagen als bewindvoerder, mits een opvolgend kantoor wordt benoemd. Tegen opheffing van het bewind zelf wordt verzet aangetekend.</li>
-  </ol>
-  <p>Op 22 mei 2026 is door de cliënt een verweerschrift op deze reactie ingediend bij Rechtbank Oost-Brabant. In het verweerschrift wordt — zonder dat er nieuwe schadebedragen of klachten worden ingediend; die zijn onderdeel van de afzonderlijke door de cliënt zelf aangespannen zaak — gemotiveerd waarom de vier hierboven genoemde punten van het bewindvoerderskantoor naar de zienswijze van de cliënt geen stand houden, met verwijzing naar schriftelijke gegevens afkomstig van negen onafhankelijke bronnen (zoals woningcorporatie, schuldhulpverlener, bank, UWV, werkgever, DUO, gemeente, KvK).</p>
-  <p>De cliënt heeft daarnaast bij de rechtbank verzocht om een <strong>openbare behandeling</strong> in plaats van de gebruikelijke besloten behandeling, en om uitstel van de behandeling met tenminste een maand omdat in de komende weken nog AVG-pakketten van twee voormalige werkgevers worden verwacht.</p>
-  <p class="update-note">Tot aan de mondelinge behandeling wordt op deze pagina geen verdere inhoudelijke informatie over de zaak geplaatst die de procesgang zou kunnen beïnvloeden. Vanaf 6 juni 2026 — of na de uiteindelijke afronding van de procedure — volgt op deze pagina de volledige release.</p>
-</section>
-
-<section class="block stance">
-  <h2>Wat dit niet is</h2>
-  <ul>
-    <li>Geen anonieme publicatie — afzender bekend, identiteit verifieerbaar.</li>
-    <li>Geen klacht over één persoon — het dossier behandelt patronen op sectorniveau.</li>
-    <li>Geen losse beschuldigingen — elke bewering verbonden aan een document, een transactie of een tijdstempel.</li>
-    <li>Geen sensatie — geen scheldwoorden, geen suggesties zonder bron.</li>
-  </ul>
-  <h2>Wat dit wel is</h2>
-  <ul>
-    <li>Een gestructureerde reconstructie van hoe het beschermingsbewind in Nederland in de praktijk functioneert, gebaseerd op één cliëntdossier waarvan de feiten zich uitstrekken tot een netwerk van veertien kantoren waartussen meerdere verbanden zijn vastgesteld.</li>
-    <li>Een dossier waarin patronen zichtbaar zijn die zich niet tot één kantoor laten beperken: bewijsvernietigingsgolven over meerdere kantoren tegelijk, gedeelde bestuurders, gedeelde software, gedeelde IP-adressen, gedeelde jaarrekening-data.</li>
-    <li>Vastgelegd met cryptografische tijdstempels op publieke OpenTimestamps-kalenderservers en verankerd in de Bitcoin-blockchain — niet vatbaar voor manipulatie achteraf, niet vatbaar voor "dat zei ik niet".</li>
-    <li>Een aanleiding voor toezicht, journalistiek en wetgever om verder te kijken naar de gehele branche, niet enkel naar dit ene dossier.</li>
-  </ul>
-</section>
-
-<section class="block verification">
-  <h2>Hoe verificatie werkt — vanaf 6 juni 2026</h2>
-  <p class="verification-intro">Vanaf de release zijn zowel het volledige zittingsdossier als de bijbehorende OpenTimestamps-receipt op deze pagina te downloaden. Iedere derde — pers, jurist, toezichthouder, technicus, geïnteresseerde leek — kan dan zelfstandig en zonder afhankelijkheid van verzoeker de echtheid en de datering van het dossier onafhankelijk vaststellen. De vier stappen:</p>
-  <ol class="verification-steps">
-    <li>Download het volledige zittingsdossier (in archiefvorm) en de OpenTimestamps-receipt (<code>.ots</code>) vanaf deze pagina.</li>
-    <li>Bereken de SHA256-vingerafdruk van het dossier-archief op uw eigen computer met de standaardtool <code>sha256sum</code> (Linux, macOS) respectievelijk <code>certutil -hashfile … SHA256</code> (Windows).</li>
-    <li>Controleer dat deze vingerafdruk exact overeenstemt met de hash zoals die op deze pagina is vermeld. Verschilt zelfs één teken, dan is het bestand niet identiek aan wat oorspronkelijk werd verankerd.</li>
-    <li>Verifieer de OpenTimestamps-receipt via de open-source tool <code>ots verify</code> of via een online verifier. Deze toont onomstotelijk in welke Bitcoin-block en op welk tijdstip de hash is opgenomen — en daarmee dat het dossier in deze exacte vorm uiterlijk op 26 april 2026 bestond.</li>
-  </ol>
-  <p class="verification-note">De gebruikte tools (<code>sha256sum</code>, <code>ots</code>) zijn open-source en publiek beschikbaar. De vier OpenTimestamps-kalenderservers (<code>alice</code>, <code>bob</code>, <code>finney</code>, <code>catallaxy</code>) staan onder beheer van onafhankelijke partijen — niet van verzoeker. De Bitcoin-blockchain wordt door geen enkele partij eenzijdig gewijzigd. De keten van bewijs ligt daarmee in haar geheel buiten de controle van verzoeker en buiten de controle van enige andere bij deze zaak betrokken partij.</p>
-
-  <p class="verification-extra">Naast de hash hierboven, die het zittingsdossier als geheel verankert, zijn meer dan 5.411 afzonderlijke bewijsstukken — webpagina-snapshots, transactiedata, KvK-uittreksels, screenshots, monitoring-rondes — elk op het moment van hun observatie individueel in de Bitcoin-blockchain verankerd. Het oudste stempel dateert van 7 maart 2026, de dag waarop het monitoring-systeem online ging. Vanaf 6 juni 2026 is voor elk afzonderlijk stempel ook de bijbehorende receipt downloadbaar; iedere derde kan dan voor elk bewijsstuk afzonderlijk vaststellen op welke datum het uiterlijk in die vorm bestond. Daarmee is het dossier niet als geheel op één datum samengesteld, maar zeven weken lang dag aan dag, in real-time, op een wijze die niemand — verzoeker zelf incluis — achteraf nog kan herzien.</p>
-</section>
-
-<section class="block contact">
-  <h2>Voor pers, toezichthouders en juridische sector</h2>
-  <p>Tot 6 juni 2026 om 06:06 wordt op verzoek vroege toegang verleend aan geverifieerde journalisten van landelijke redacties en aan toezichthoudende instanties. Verzoek per e-mail aan het hieronder vermelde adres met vermelding van uw functie en de aard van uw belang.</p>
-  <p class="email"><span id="contact-email" data-u="YWxtYXNzLW9ubHk=" data-d="cHJvdG9ubWFpbC5jb20=">[laden…]</span></p>
-  <noscript><p class="email" style="color:var(--fg-mute);font-size:0.9rem">Schakel JavaScript in om het contactadres te tonen.</p></noscript>
-  <p class="signature">Met de groeten van<br><strong>WimLee115</strong></p>
-</section>
-
+<main>
+  <p>Deze website blijft tot na de mondelinge behandeling van mijn zaak op zwart.</p>
+  <p>Om mijn eigen procespositie niet te schaden, plaats ik in deze periode geen verdere informatie over het dossier op deze pagina.</p>
+  <p class="meta">B. van Rooij</p>
 </main>
-
-<footer>
-  <p>De cryptografische bewijsketen van het zittingsdossier is op vier publieke OpenTimestamps-kalenderservers verankerd in de Bitcoin-blockchain. Verificatie is door iedereen onafhankelijk uitvoerbaar.</p>
-  <span class="ots-badge">Verankerd in Bitcoin · 26 april 2026</span>
-  <p class="meta">Aankondiging gepubliceerd 26 april 2026 — release 6 juni 2026 06:06.</p>
-</footer>
-
-<script src="countdown.js" integrity="sha384-FyxBCsrAd994YyG5G8DPeEQe9+ZRZ+jRnK6eimmAPC0URetnwpRQHTvoNc1+YnUy" crossorigin="anonymous" defer></script>
 </body>
 </html>
