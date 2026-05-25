@@ -4,14 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-<!-- Security headers (via meta — GitHub Pages serveert geen custom headers) -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'none'; font-src 'none'; connect-src 'none'; form-action 'none'; frame-ancestors 'none'; frame-src 'none'; child-src 'none'; worker-src 'none'; media-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; upgrade-insecure-requests; block-all-mixed-content">
+<!-- Security headers (via meta — GitHub Pages serveert geen custom headers; Cloudflare via _headers ook) -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src 'none'; font-src 'none'; connect-src 'none'; form-action 'none'; frame-ancestors 'none'; frame-src 'none'; child-src 'none'; worker-src 'none'; media-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; upgrade-insecure-requests; block-all-mixed-content">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="X-DNS-Prefetch-Control" content="off">
+<meta http-equiv="X-Permitted-Cross-Domain-Policies" content="none">
 <meta http-equiv="Referrer-Policy" content="no-referrer">
-<meta http-equiv="Permissions-Policy" content="interest-cohort=(), camera=(), microphone=(), geolocation=()">
+<meta http-equiv="Permissions-Policy" content="interest-cohort=(), camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=(), bluetooth=(), midi=(), serial=(), hid=(), display-capture=(), idle-detection=(), sync-xhr=(), screen-wake-lock=(), web-share=(), xr-spatial-tracking=(), clipboard-read=(), clipboard-write=()">
 
-<meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <title>dossier608.nl</title>
 
 <style>
@@ -23,6 +27,12 @@
     color: #ddd;
     font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
   }
   body {
     display: flex;
@@ -48,13 +58,41 @@
     font-size: 0.9rem;
     margin-top: 2rem;
   }
+  @media print {
+    body { display: none !important; }
+  }
 </style>
 </head>
-<body>
+<body oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;">
 <main>
   <p>Deze website blijft tot na de mondelinge behandeling van mijn zaak op zwart.</p>
   <p>Om mijn eigen procespositie niet te schaden, plaats ik in deze periode geen verdere informatie over het dossier op deze pagina.</p>
   <p class="meta">B. van Rooij</p>
 </main>
+<script>
+(function(){
+  'use strict';
+  var block = function(e){ if(e && e.preventDefault) e.preventDefault(); if(e && e.stopPropagation) e.stopPropagation(); return false; };
+  document.addEventListener('contextmenu', block, {capture:true});
+  document.addEventListener('dragstart', block, {capture:true});
+  document.addEventListener('selectstart', block, {capture:true});
+  document.addEventListener('copy', block, {capture:true});
+  document.addEventListener('cut', block, {capture:true});
+  document.addEventListener('keydown', function(e){
+    var k = e.key || '';
+    var ctrl = e.ctrlKey || e.metaKey;
+    var shift = e.shiftKey;
+    if (k === 'F12') return block(e);
+    if (ctrl && (k === 'u' || k === 'U')) return block(e);
+    if (ctrl && (k === 's' || k === 'S')) return block(e);
+    if (ctrl && (k === 'p' || k === 'P')) return block(e);
+    if (ctrl && (k === 'a' || k === 'A')) return block(e);
+    if (ctrl && shift && (k === 'I' || k === 'i')) return block(e);
+    if (ctrl && shift && (k === 'J' || k === 'j')) return block(e);
+    if (ctrl && shift && (k === 'C' || k === 'c')) return block(e);
+    if (ctrl && shift && (k === 'K' || k === 'k')) return block(e);
+  }, {capture:true});
+})();
+</script>
 </body>
 </html>

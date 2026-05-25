@@ -1,31 +1,19 @@
 /*
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
-  Content-Security-Policy: default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; frame-ancestors 'none'; frame-src 'none'; child-src 'none'; worker-src 'none'; media-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests; block-all-mixed-content
+  Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src 'none'; font-src 'none'; connect-src 'none'; form-action 'none'; frame-ancestors 'none'; frame-src 'none'; child-src 'none'; worker-src 'none'; media-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; upgrade-insecure-requests; block-all-mixed-content
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-DNS-Prefetch-Control: off
   X-Permitted-Cross-Domain-Policies: none
   X-XSS-Protection: 0
   Referrer-Policy: no-referrer
-  Permissions-Policy: interest-cohort=(), camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=(), bluetooth=(), midi=(), serial=(), hid=(), display-capture=(), idle-detection=(), sync-xhr=(), screen-wake-lock=(), web-share=(), xr-spatial-tracking=()
+  Permissions-Policy: interest-cohort=(), camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=(), bluetooth=(), midi=(), serial=(), hid=(), display-capture=(), idle-detection=(), sync-xhr=(), screen-wake-lock=(), web-share=(), xr-spatial-tracking=(), clipboard-read=(), clipboard-write=()
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-origin
-  ! Cross-Origin-Embedder-Policy: require-corp
-  ! Bovenstaande COEP-regel uit-commentarieerd: kan andere CORS-headers vereisen.
-  ! Activeer pas wanneer alle subresources expliciet Cross-Origin-Resource-Policy
-  ! kunnen serveren (bv. via Cloudflare front).
-  Cache-Control: public, max-age=300, must-revalidate
-  X-Robots-Tag: index, follow, noarchive, nosnippet, noimageindex
+  Cache-Control: no-store, no-cache, must-revalidate, private
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet, noimageindex
   Server-Timing: dossier608
 
 /.well-known/security.txt
   Content-Type: text/plain; charset=utf-8
   Cache-Control: public, max-age=86400
-
-/style.css
-  Content-Type: text/css; charset=utf-8
-  Cache-Control: public, max-age=86400, immutable
-
-/countdown.js
-  Content-Type: application/javascript; charset=utf-8
-  Cache-Control: public, max-age=86400, immutable

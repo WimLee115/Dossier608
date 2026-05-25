@@ -1,20 +1,42 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" dir="ltr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self' data:; font-src 'self'; frame-ancestors 'none'; base-uri 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src 'none'; font-src 'none'; connect-src 'none'; form-action 'none'; frame-ancestors 'none'; base-uri 'none'">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
 <meta http-equiv="Referrer-Policy" content="no-referrer">
-<meta name="robots" content="noindex,nofollow">
-<title>Niet gevonden — Dossier608</title>
-<link rel="stylesheet" href="/style.css">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<title>dossier608.nl</title>
+<style>
+  html, body {
+    margin: 0; padding: 0; height: 100%;
+    background: #000; color: #ddd;
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
+    -webkit-touch-callout: none;
+  }
+  body { display: flex; align-items: center; justify-content: center; padding: 2rem; box-sizing: border-box; }
+  main { max-width: 36rem; line-height: 1.6; font-size: 1.05rem; text-align: left; }
+  main p { margin: 0; }
+  @media print { body { display: none !important; } }
+</style>
 </head>
-<body>
-<header class="hero">
-  <p class="overline">404</p>
-  <h1 class="title">Niet gevonden</h1>
-  <p class="release-line"><a href="/" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px">Terug naar de aankondiging</a></p>
-</header>
+<body oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" oncopy="return false;">
+<main>
+  <p>Deze website blijft tot na de mondelinge behandeling van mijn zaak op zwart.</p>
+</main>
+<script>
+(function(){'use strict';
+var block=function(e){if(e&&e.preventDefault)e.preventDefault();return false;};
+document.addEventListener('contextmenu',block,{capture:true});
+document.addEventListener('keydown',function(e){var k=e.key||'',c=e.ctrlKey||e.metaKey,s=e.shiftKey;
+if(k==='F12')return block(e);
+if(c&&(k==='u'||k==='U'||k==='s'||k==='S'||k==='p'||k==='P'))return block(e);
+if(c&&s&&(k==='I'||k==='i'||k==='J'||k==='j'||k==='C'||k==='c'||k==='K'||k==='k'))return block(e);
+},{capture:true});
+})();
+</script>
 </body>
 </html>
