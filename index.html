@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
 <!-- Security headers (via meta — GitHub Pages serveert geen custom headers; Cloudflare via _headers ook) -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src 'none'; font-src 'none'; connect-src 'none'; form-action 'none'; frame-ancestors 'none'; frame-src 'none'; child-src 'none'; worker-src 'none'; media-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; upgrade-insecure-requests; block-all-mixed-content">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'none'; img-src 'none'; font-src 'none'; connect-src 'none'; form-action 'none'; frame-ancestors 'none'; frame-src 'none'; child-src 'none'; worker-src 'none'; media-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; upgrade-insecure-requests; block-all-mixed-content">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="X-Frame-Options" content="DENY">
 <meta http-equiv="X-DNS-Prefetch-Control" content="off">
@@ -18,81 +18,13 @@
 <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <title>dossier608.nl</title>
 
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background: #000;
-    color: #ddd;
-    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-touch-callout: none;
-    -webkit-tap-highlight-color: transparent;
-  }
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    box-sizing: border-box;
-  }
-  main {
-    max-width: 36rem;
-    line-height: 1.6;
-    font-size: 1.05rem;
-    text-align: left;
-  }
-  main p {
-    margin: 0 0 1rem 0;
-  }
-  main p:last-child {
-    margin-bottom: 0;
-  }
-  .meta {
-    color: #777;
-    font-size: 0.9rem;
-    margin-top: 2rem;
-  }
-  @media print {
-    body { display: none !important; }
-  }
-</style>
+<link rel="stylesheet" href="/style.css">
 </head>
-<body oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;">
+<body>
 <main>
   <p>Deze website blijft tot na de mondelinge behandeling van mijn zaak op zwart.</p>
   <p>Om mijn eigen procespositie niet te schaden, plaats ik in deze periode geen verdere informatie over het dossier op deze pagina.</p>
   <p class="meta">B. van Rooij</p>
 </main>
-<script>
-(function(){
-  'use strict';
-  var block = function(e){ if(e && e.preventDefault) e.preventDefault(); if(e && e.stopPropagation) e.stopPropagation(); return false; };
-  document.addEventListener('contextmenu', block, {capture:true});
-  document.addEventListener('dragstart', block, {capture:true});
-  document.addEventListener('selectstart', block, {capture:true});
-  document.addEventListener('copy', block, {capture:true});
-  document.addEventListener('cut', block, {capture:true});
-  document.addEventListener('keydown', function(e){
-    var k = e.key || '';
-    var ctrl = e.ctrlKey || e.metaKey;
-    var shift = e.shiftKey;
-    if (k === 'F12') return block(e);
-    if (ctrl && (k === 'u' || k === 'U')) return block(e);
-    if (ctrl && (k === 's' || k === 'S')) return block(e);
-    if (ctrl && (k === 'p' || k === 'P')) return block(e);
-    if (ctrl && (k === 'a' || k === 'A')) return block(e);
-    if (ctrl && shift && (k === 'I' || k === 'i')) return block(e);
-    if (ctrl && shift && (k === 'J' || k === 'j')) return block(e);
-    if (ctrl && shift && (k === 'C' || k === 'c')) return block(e);
-    if (ctrl && shift && (k === 'K' || k === 'k')) return block(e);
-  }, {capture:true});
-})();
-</script>
 </body>
 </html>

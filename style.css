@@ -1,2 +1,35 @@
-/* dossier608.nl — pagina staat op zwart tot na de mondelinge behandeling.
-   Geen externe stylesheet wordt nog gebruikt; stijlregels staan inline in index.html. */
+/* dossier608.nl — gedeelde stijl voor index.html en 404.html.
+   Pagina staat op zwart tot na de mondelinge behandeling. */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #000;
+  color: #ddd;
+  font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+main {
+  max-width: 36rem;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  text-align: left;
+}
+main p {
+  margin: 0 0 1rem 0;
+}
+main p:last-child {
+  margin-bottom: 0;
+}
+.meta {
+  color: #777;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
