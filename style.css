@@ -1,35 +1,126 @@
 /* dossier608.nl — gedeelde stijl voor index.html en 404.html.
+   Pure CSS, geen JavaScript (CSP: script-src 'none'). Geen externe assets
+   (CSP: img-src/font-src 'none') — system-monospace + CSS-gradients.
    Pagina staat op zwart tot na de mondelinge behandeling. */
+
+:root {
+  --bg: #050505;
+  --fg: #d2d2d2;
+  --dim: #6a6a6a;
+  --faint: #474747;
+  --accent: #e8a33d;          /* CRT-amber · alternatief: #4fd6c0 (cyan) of #5cdb7a (groen) */
+  --redact: #1b1b1b;
+}
+
+* { box-sizing: border-box; }
+
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  background: #000;
-  color: #ddd;
-  font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-monospace, "JetBrains Mono", "Cascadia Code", "Fira Code", "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+
+/* (1) diepte — amber-waas + vignette + scanlines, alles pure CSS-gradient */
 body {
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  box-sizing: border-box;
+  background:
+    radial-gradient(1100px 560px at 50% 36%, color-mix(in srgb, var(--accent) 6%, transparent), transparent 60%),
+    radial-gradient(ellipse at center, #0d0d0d 0%, #000 80%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, transparent 1px 3px);
 }
+/* fijn dot-grid bovenlaag */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1.4px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
 main {
-  max-width: 36rem;
-  line-height: 1.6;
-  font-size: 1.05rem;
-  text-align: left;
+  position: relative;
+  max-width: 40rem;
+  width: 100%;
+  line-height: 1.65;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
 }
-main p {
-  margin: 0 0 1rem 0;
+
+/* (2 + 6) terminal-prompt + accent + knipperende cursor */
+.prompt-line {
+  font-size: 1.4rem;
+  letter-spacing: 0.16em;
+  color: #ededed;
+  margin-bottom: 0.95rem;
 }
-main p:last-child {
-  margin-bottom: 0;
+.accent { color: var(--accent); }
+.cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.05em;
+  margin-left: 0.16em;
+  vertical-align: -0.16em;
+  background: var(--accent);
+  box-shadow: 0 0 9px color-mix(in srgb, var(--accent) 75%, transparent);
+  animation: blink 1.15s steps(1) infinite;
 }
+@keyframes blink { 0%, 50% { opacity: 1; } 50.01%, 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .cursor { animation: none; } }
+
+/* (6) dunne gloeiende accentlijn */
+.rule {
+  height: 1px;
+  width: 7rem;
+  margin: 0 0 1.9rem;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+p { margin: 0 0 1.1rem; }
+
+/* (4) geredigeerde (zwartgelakte) status-balk */
+.status {
+  margin-top: 1.7rem;
+  color: var(--dim);
+  font-size: 0.92rem;
+}
+.redacted {
+  display: inline-block;
+  width: 6.5em;
+  height: 0.98em;
+  vertical-align: -0.14em;
+  background: var(--redact);
+  border: 1px solid #000;
+  border-radius: 1px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
+}
+
+/* (5) hash-signatuur + handle */
 .meta {
-  color: #777;
-  font-size: 0.9rem;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.8rem 1.4rem;
+  flex-wrap: wrap;
+  color: var(--dim);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+.meta .hash { color: var(--faint); }
+
+@media (max-width: 480px) {
+  body { padding: 1.5rem; }
+  .prompt-line { font-size: 1.18rem; }
+  main { font-size: 0.95rem; }
 }
